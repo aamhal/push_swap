@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:12:20 by aamhal            #+#    #+#             */
-/*   Updated: 2023/03/09 18:52:28 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/05/31 08:32:45 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 
 typedef struct s_list
 {
-	void *content;
+	int content;
+	int index;
 	struct s_list *next;
 } t_list;
 
@@ -29,8 +30,11 @@ char	*ft_join_param(int ac, char **p);
 int		ft_check_is_valid(char **p);
 int		ft_check_char(char *p);
 int		ft_check_duplicat(char **p);
-int		check_spaces(char *p);
+int		check_char(char *p, char c);
 int check_signe(char **p);
+char **parsing(int ac,char **av);
+int *char_int(char **p, int ac);
+void ft_error(void);
 
 // liked list function
 t_list	*ft_lstnew(void *content);

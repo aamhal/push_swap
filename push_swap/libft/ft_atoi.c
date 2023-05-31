@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 05:17:45 by aamhal            #+#    #+#             */
-/*   Updated: 2023/03/08 17:17:01 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/05/30 15:09:11 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if (result > 2147483648 && signe == -1)
-		return (-1);
+		return (0);
 	else if (result > 2147483647 && signe == 1)
-		return (-1);
+		return (0);
 	return (result * signe);
 }
