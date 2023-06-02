@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_a_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 11:53:02 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/02 18:38:26 by aamhal           ###   ########.fr       */
+/*   Created: 2023/06/02 12:37:43 by aamhal            #+#    #+#             */
+/*   Updated: 2023/06/02 18:05:44 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void swap_a(t_list **a)
 {
-	t_list	*a;
-	// t_list	*b;
-	int *tmp;
-	char **p;
+	swap(a);
+	ft_printf("sa\n");
+}
 
-	if (ac < 2)
-		return (0);
-	p = parsing(ac, av);
-	tmp = char_int(p, ac);
-	a = fill_stack(tmp);
-	nbr_position(&a);
-	find_index(&a);
-	if_nbr_sort(&a);
-	sort_3_nbr(&a);
-	printf("nbr        index         pos\n");
-	print_nodes(a);
+void rotat_a(t_list **a)
+{
+	rotation(a);
+	ft_printf("ra\n");
+}
 
-	
-	return (0);
+void rev_rotat_a(t_list **a)
+{
+	rev_rotation(a);
+	ft_printf("rra\n");
+}
+
+void push_a(t_list **a, t_list **b)
+{
+	push(a, b);
+	ft_printf("pa\n");
 }

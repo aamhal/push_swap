@@ -1,49 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 07:33:54 by aamhal            #+#    #+#             */
-/*   Updated: 2023/05/31 14:11:10 by aamhal           ###   ########.fr       */
+/*   Created: 2023/06/02 17:48:42 by aamhal            #+#    #+#             */
+/*   Updated: 2023/06/02 18:07:46 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *ft_lstnew(int nbr)
+void sort_3_nbr(t_list **s)
 {
-	t_list	*head;
-
-	head = malloc(sizeof(t_list));
-	if (!head)
-		return (0);
-	head->nbr = nbr;
-	head->next = NULL;
-	return (head);
-}
-
-void ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (lst && new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
-}
-
-void ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list *head;
+	t_list *first;
+	t_list *second;
+	t_list *third;
 	
-	head = *lst;
-	if (head)
+	first = (*s);
+	second = (*s)->next;
+	third = (*s)->next->next;
+	if (first->index == 2)
 	{
-		while (head->next)
-			head = head->next;
-		head->next = new;
-	}	
-	else
-		*lst = new;
+		if (second->index > third->index)
+		{
+			rotat_a(s);
+			swap_a(s);
+		}
+		else
+			rotat_a(s);
+	}
+	else if (second->index == 2)
+	{
+		if (first->index < third->index)
+		{
+			rev_rotat_a(s);
+			swap_a(s);
+		}
+		else
+			rev_rotat_a(s);
+	}
+	else if (third->index == 2)
+		swap_a(s);
 }
