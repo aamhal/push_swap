@@ -6,13 +6,13 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:51:09 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/02 18:39:04 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 18:22:10 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *fill_stack(int *nbr)
+t_list *fill_stack(int *nbr,int ac)
 {
 	t_list *new;
 	t_list *a;
@@ -20,10 +20,11 @@ t_list *fill_stack(int *nbr)
 
 	a = NULL;
 	i = 0;
-	while (nbr[i])
+	while (ac)
 	{
 		new = ft_lstnew(nbr[i]);
 		ft_lstadd_back(&a, new);
+		ac--;
 		i++;
 	}
 	return (a);
@@ -74,10 +75,10 @@ void if_nbr_sort(t_list **s)
 	j = (*s)->next;
 	while (j != NULL)
 	{
-		if (i->nbr > j->nbr)
+		if (i->index > j->index)
 			return ;
 		j = j->next;
 	}
 	print_nodes(*s);
-	exit(1);
+	exit(0);
 }

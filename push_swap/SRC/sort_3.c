@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:48:42 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/02 18:07:46 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 18:42:56 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,20 @@ void sort_3_nbr(t_list **s)
 	first = (*s);
 	second = (*s)->next;
 	third = (*s)->next->next;
-	if (first->index == 2)
-	{
-		if (second->index > third->index)
-		{
-			rotat_a(s);
-			swap_a(s);
-		}
-		else
-			rotat_a(s);
-	}
-	else if (second->index == 2)
-	{
-		if (first->index < third->index)
-		{
-			rev_rotat_a(s);
-			swap_a(s);
-		}
-		else
-			rev_rotat_a(s);
-	}
-	else if (third->index == 2)
-		swap_a(s);
+    if (first->index == 1 && second->index == 0 && third->index == 2)
+        swap_a(s);
+    else if (first->index == 2 && second->index == 1 && third->index == 0)
+    {
+        swap_a(s);
+        rev_rotat_a(s);
+    }
+    else if (first->index == 0 && second->index == 2 && third->index == 1)
+    {
+        swap_a(s);
+        rotat_a(s);
+    }
+    else if (first->index == 2 && second->index == 0 && third->index == 1)
+        rotat_a(s);
+    else 
+        rev_rotat_a(s);
 }

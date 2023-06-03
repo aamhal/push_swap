@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:52:21 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/02 18:32:34 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 14:28:04 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void    print_nodes(t_list *s)
     {
         if (stack_a)
         {
-            printf("%d    %d\t", stack_a->nbr, stack_a->index);
+            printf("%d\t", stack_a->nbr);
             stack_a = stack_a->next;
         }
         else

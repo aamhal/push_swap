@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 12:42:47 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/02 12:59:20 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 17:22:40 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void rev_rotat_b(t_list **b)
 	ft_printf("rrb\n");
 }
 
-void push_b(t_list **b, t_list **a)
+void push_b(t_list **a, t_list **b)
 {
 	push(b, a);
 	ft_printf("pb\n");

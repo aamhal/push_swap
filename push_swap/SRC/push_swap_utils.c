@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 07:33:54 by aamhal            #+#    #+#             */
-/*   Updated: 2023/05/31 14:11:10 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 15:49:27 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,21 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	}	
 	else
 		*lst = new;
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int		count;
+	t_list	*p;
+
+	count = 0;
+	if (lst == NULL)
+		return (0);
+	p = lst;
+	while (p != NULL)
+	{
+		count++;
+		p = p->next;
+	}
+	return (count);
 }

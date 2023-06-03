@@ -6,7 +6,7 @@ PRINTF_A = libftprintf/libftprintf.a
 LIBFT = libft/
 PRINTF = libftprintf/
 
-SRC = SRC/main.c SRC/puch_swap_pars1.c SRC/push_swap_pars2.c SRC/stack.c SRC/push_swap_utils.c SRC/operation.c SRC/stack_a_operations.c SRC/stack_b_operations.c SRC/sort_3.c
+SRC = SRC/main.c SRC/puch_swap_pars1.c SRC/push_swap_pars2.c SRC/stack.c SRC/push_swap_utils.c SRC/operation.c SRC/stack_a_operations.c SRC/stack_b_operations.c SRC/sort_3.c SRC/sort_4_5.c
 		
 OBJ = $(SRC:.c=.o)
 

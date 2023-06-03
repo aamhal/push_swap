@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:53:02 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/02 18:38:26 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 18:59:42 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_list	*a;
-	// t_list	*b;
+	t_list	*b;
 	int *tmp;
 	char **p;
 
@@ -23,14 +23,14 @@ int	main(int ac, char **av)
 		return (0);
 	p = parsing(ac, av);
 	tmp = char_int(p, ac);
-	a = fill_stack(tmp);
+	a = fill_stack(tmp, ac -1);
 	nbr_position(&a);
-	find_index(&a);
-	if_nbr_sort(&a);
-	sort_3_nbr(&a);
-	printf("nbr        index         pos\n");
+	find_index(&a);	
+	// sort_3_nbr(&a);
+	// sort_4_nbr(&a,&b);
+	sort_5_nbr(&a,&b);
 	print_nodes(a);
-
+	// aff(a,b,5);
 	
 	return (0);
 }
