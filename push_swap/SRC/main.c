@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:53:02 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/03 18:59:42 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 19:04:26 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,17 @@ int	main(int ac, char **av)
 	tmp = char_int(p, ac);
 	a = fill_stack(tmp, ac -1);
 	nbr_position(&a);
-	find_index(&a);	
-	// sort_3_nbr(&a);
-	// sort_4_nbr(&a,&b);
-	sort_5_nbr(&a,&b);
+	if (ac == 4)
+	{
+		find_index(&a);
+		sort_3_nbr(&a);
+	}
+	else if (ac == 5)
+		sort_4_nbr(&a,&b);
+	else if (ac == 6)
+		sort_5_nbr(&a,&b);
+	else
+		exit(0);
 	print_nodes(a);
 	// aff(a,b,5);
 	

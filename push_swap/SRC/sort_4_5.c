@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:08:26 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/03 18:58:52 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/03 19:02:46 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void sort_5_nbr(t_list **a, t_list **b)
 
 void sort_4_nbr(t_list **a, t_list **b)
 {
+	find_index(a);
 	push_nbrs2(a,b);
 	find_index(a);
 	sort_3_nbr(a);
