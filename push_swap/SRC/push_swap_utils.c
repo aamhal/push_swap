@@ -6,13 +6,13 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 07:33:54 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/03 15:49:27 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/04 10:39:11 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *ft_lstnew(int nbr)
+t_list	*ft_lstnew(int nbr)
 {
 	t_list	*head;
 
@@ -24,7 +24,7 @@ t_list *ft_lstnew(int nbr)
 	return (head);
 }
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (lst && new)
 	{
@@ -33,10 +33,10 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *head;
-	
+	t_list	*head;
+
 	head = *lst;
 	if (head)
 	{
