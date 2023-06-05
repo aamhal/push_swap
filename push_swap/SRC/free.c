@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 12:37:43 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 12:59:21 by aamhal           ###   ########.fr       */
+/*   Created: 2023/06/05 10:42:38 by aamhal            #+#    #+#             */
+/*   Updated: 2023/06/05 14:10:45 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sw(t_list **a, char *str)
+void	ft_free(char **p)
 {
-	swap(a);
-	ft_putstr_fd(str, 1);
+	int	i;
+
+	i = 0;
+	while (p[i])
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
 }
 
-void	r(t_list **a, char *str)
+void	ft_free_ll(t_list **s)
 {
-	rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	rr(t_list **a, char *str)
-{
-	rev_rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	p(t_list **a, t_list **b, char *str)
-{
-	push(a, b);
-	ft_putstr_fd(str, 1);
+	while (*s != NULL)
+	{
+		free(*s);
+		*s = (*s)->next;
+	}
 }

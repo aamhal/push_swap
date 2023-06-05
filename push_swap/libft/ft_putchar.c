@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 12:37:43 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 12:59:21 by aamhal           ###   ########.fr       */
+/*   Created: 2022/11/15 09:25:02 by aamhal            #+#    #+#             */
+/*   Updated: 2023/06/05 09:18:51 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sw(t_list **a, char *str)
+void	ft_putchar(char c, int *count)
 {
-	swap(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	r(t_list **a, char *str)
-{
-	rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	rr(t_list **a, char *str)
-{
-	rev_rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	p(t_list **a, t_list **b, char *str)
-{
-	push(a, b);
-	ft_putstr_fd(str, 1);
+	write(1, &c, 1);
+	*count = *count + 1;
 }

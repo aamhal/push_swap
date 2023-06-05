@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:51:09 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 14:03:09 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/05 12:53:54 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_list	*fill_stack(int *nbr, char **p)
 {
@@ -34,8 +34,8 @@ void	nbr_position(t_list **s)
 	t_list	*p;
 	int		counter;
 
-	counter = 1;
 	p = *s;
+	counter = 1;
 	while (p != NULL)
 	{
 		p->pos = counter;
@@ -66,19 +66,22 @@ void	find_index(t_list **s)
 	}
 }
 
-void	if_nbr_sort(t_list **s)
+int	if_nbr_sort(t_list **s)
 {
 	t_list	*i;
 	t_list	*j;
 
-	i = (*s);
-	j = (*s)->next;
-	while (j != NULL)
+	if ((*s))
 	{
-		if (i->index > j->index)
-			return ;
-		j = j->next;
-		i = i->next;
+		i = (*s);
+		j = (*s)->next;
+		while (j != NULL)
+		{
+			if (i->index > j->index)
+				return (-1);
+			j = j->next;
+			i = i->next;
+		}
 	}
-	exit(0);
+	return (0);
 }

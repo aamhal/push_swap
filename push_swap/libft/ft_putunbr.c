@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 12:37:43 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 12:59:21 by aamhal           ###   ########.fr       */
+/*   Created: 2022/11/15 10:15:18 by aamhal            #+#    #+#             */
+/*   Updated: 2023/06/05 09:18:21 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sw(t_list **a, char *str)
+void	ft_putunbr(unsigned int n, int *count)
 {
-	swap(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	r(t_list **a, char *str)
-{
-	rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	rr(t_list **a, char *str)
-{
-	rev_rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	p(t_list **a, t_list **b, char *str)
-{
-	push(a, b);
-	ft_putstr_fd(str, 1);
+	if (n <= 9)
+	{
+		ft_putchar(n + '0', count);
+	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10, count);
+		ft_putnbr(n % 10, count);
+	}
 }

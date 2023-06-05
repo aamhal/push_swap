@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 12:37:43 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 12:59:21 by aamhal           ###   ########.fr       */
+/*   Created: 2022/11/15 09:33:16 by aamhal            #+#    #+#             */
+/*   Updated: 2023/06/05 09:18:46 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sw(t_list **a, char *str)
+void	ft_puthexa(unsigned int nbr, int *count, char c)
 {
-	swap(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	r(t_list **a, char *str)
-{
-	rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	rr(t_list **a, char *str)
-{
-	rev_rotation(a);
-	ft_putstr_fd(str, 1);
-}
-
-void	p(t_list **a, t_list **b, char *str)
-{
-	push(a, b);
-	ft_putstr_fd(str, 1);
+	if (nbr <= 9)
+		ft_putchar(nbr + '0', count);
+	else if (nbr > 9 && nbr < 16)
+	{
+		if (c == 'u')
+			ft_putchar("ABCDEF"[nbr % 10], count);
+		if (c == 'l')
+			ft_putchar("abcdef"[nbr % 10], count);
+	}
+	else
+	{
+		ft_puthexa(nbr / 16, count, c);
+		ft_puthexa(nbr % 16, count, c);
+	}
 }

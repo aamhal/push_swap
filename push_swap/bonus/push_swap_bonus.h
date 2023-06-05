@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:12:20 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 14:09:42 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/05 14:43:38 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <unistd.h>
 # include <stdio.h>
@@ -37,7 +37,6 @@ char	**parsing(int ac, char **av);
 int		*char_int(char **p);
 void	ft_error(void);
 void	check_atoi(char *str);
-void	check_arg(t_list **a, t_list **b, int i);
 
 // liked list function
 t_list	*ft_lstnew(int nbr);
@@ -65,17 +64,17 @@ void	rr(t_list **a, char *str);
 void	p(t_list **b, t_list **a, char *str);
 
 //sort
-void	if_nbr_sort(t_list **s);
-void	sort_3_nbr(t_list **s);
-void	sort_4_nbr(t_list **a, t_list **b);
-void	sort_5_nbr(t_list **a, t_list **b);
-void	push_nbrs_5(t_list **a, t_list **b);
-void	push_nbrs(t_list **a, t_list **b);
-void	fill_stack_b(t_list **a, t_list **b);
-void	fill_stack_a(t_list **a, t_list **b);
+int		if_nbr_sort(t_list **s);
+
+//checker
+void	ft_check_input(t_list **a, t_list **b, char *gnl);
+int		ft_strcmp(char *s1, char *s2);
+void	ft_check_input2(t_list **a, t_list **b, char *gnl);
+void	output(char *str, int i);
 
 //free
 void	ft_free(char **p);
 void	ft_free_ll(t_list **s);
+void	ft_free2(char **p, int *tmp);
 
 #endif
