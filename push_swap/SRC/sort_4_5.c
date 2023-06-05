@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:08:26 by aamhal            #+#    #+#             */
-/*   Updated: 2023/06/05 14:51:37 by aamhal           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:30:12 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	push_nbrs_5(t_list **a, t_list **b)
 	if (pos <= ft_lstsize(*a) / 2 + 1)
 	{
 		while ((*a)->index != i)
-			r(a, "sa\n");
+			r(a, "ra\n");
 		p(a, b, "pb\n");
 	}
 	else
@@ -80,7 +80,6 @@ void	sort_5_nbr(t_list **a, t_list **b)
 	p(b, a, "pa\n");
 	p(b, a, "pa\n");
 }
-
 
 void	sort_4_nbr(t_list **a, t_list **b)
 {
